@@ -1,0 +1,2 @@
+Date                                Credit           Debit          Balance
+[2024-05-14] [15:03:21]       2000              2000

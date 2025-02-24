@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Multiplication Table Generator</h2>
+    <p>Enter the number of rows and columns:</p>
+    <input type="number" id="numRows" placeholder="Number of Rows">
+    <input type="number" id="numCols" placeholder="Number of Columns">
+    <button onclick="generateTable()">Generate Table</button>
+    <br>
+
+    <table id="multiplicationTable">
+        <!-- The table will be generated here -->
+    </table>
+
+    <script>
+        function generateTable() {
+            const numRows = parseInt(document.getElementById("numRows").value);
+            const numCols = parseInt(document.getElementById("numCols").value);
+            const table = document.getElementById("multiplicationTable");
+
+            // Clear previous table content
+            table.innerHTML = "";
+
+            for (let i = 1; i <= numRows; i++) {
+                const row = document.createElement("tr");
+
+                for (let j = 1; j <= numCols; j++) {
+                    const cell = document.createElement(i === 1 || j === 1 ? "th" : "td");
+                    const value = i * j;
+
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                }
+
+                table.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
+
